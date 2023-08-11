@@ -3,3 +3,12 @@ VERSION 0.0.0
 VERSION 0.2.0
 Added the the basic window
 Added text input reader
+
+VERSION 0.3.0 
+Added pages class to handle multi line text edits
+
+VERSION 0.3.1
+Fixed navigation errors that crash the app
+
+VERSION 0.4.0
+Added navigational control for inputs
