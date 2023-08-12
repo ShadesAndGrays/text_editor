@@ -20,7 +20,9 @@ include_directories(
 set(SRC ${PROJECT_SOURCE_DIR}/src)
 
 file(GLOB SOURCES ${SRC}/*.cpp)
-message("sources files" ${SOURCES})
+foreach(SRC_FILE ${SOURCES})
+  message("sources files" ${SRC_FILE})
+endforeach()
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 

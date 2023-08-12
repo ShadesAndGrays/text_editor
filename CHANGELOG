@@ -12,3 +12,6 @@ Fixed navigation errors that crash the app
 
 VERSION 0.4.0
 Added navigational control for inputs
+
+VERSION 0.5.0
+Added file saving

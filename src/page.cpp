@@ -87,7 +87,7 @@ void page::move_left()
 {
     if (col <= 0)
     {
-         if (current_line > 0)
+        if (current_line > 0)
         {
             move_up();
             col = lines[current_line].size();
@@ -103,8 +103,9 @@ void page::move_right()
     // std::cout << lines[current_line].size();
     if (col >= lines[current_line].size())
     {
-        if (lines.size() > current_line)
+        if (lines.size()-1 > current_line)
         {
+            //std::cout << lines.size()-1 << "   and   " << current_line;
             move_down();
             col = 0;
             return;
