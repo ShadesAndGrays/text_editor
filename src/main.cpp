@@ -1,7 +1,7 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
-#include "page.hpp"
-#include "file_loader.hpp"
+#include "../include/page.hpp"
+#include "../include/file_loader.hpp"
 #include <vector>
 #include "SFML/Window/Keyboard.hpp"
 // #include "SFML/System/Clock.hpp"
@@ -24,7 +24,7 @@ int main()
     Text.setFillColor(sf::Color::Black);
     Text.setPosition(sf::Vector2f(0.0, 0.0));
     sf::Font Font;
-    Font.loadFromFile("font/ARIAL.TTF");
+    Font.loadFromFile("font/arial.ttf");
     Text.setFont(Font);
     std::string inputText = "";
     Text.setString(inputText);

@@ -1,6 +1,6 @@
 // page.cpp
 
-#include "page.hpp"
+#include "../include/page.hpp"
 #include "iostream"
 
 page::page()
