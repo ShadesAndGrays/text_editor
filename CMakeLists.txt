@@ -1,34 +1,26 @@
-cmake_minimum_required(VERSION 3.10.0)
+cmake_minimum_required(VERSION 3.19.0)
 
 project(main)
 
-#set(DLL_DIRECTORY ${PROJECT_SOURCE_DIR}/SFML/bin)
-#set(LIB_DIRECTORY ${PROJECT_SOURCE_DIR}/SFML/lib)
-
-#file(GLOB DLL_FILES ${DLL_DIRECTORY}/*.dll)
-#file(GLOB LIB_FILES ${LIB_DIRECTORY}/*.a)
-
-
-##include_directories(include)    
-find_package(SFML COMPONENTS graphics window system)
-
-
-#set(SFML_STATIC_LIBRARIES TRUE)
+set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 
 set(SRC ${PROJECT_SOURCE_DIR}/src)
 
-file(GLOB SOURCES ${SRC}/*.cpp)
-foreach(SRC_FILE ${SOURCES})
-  message("sources files" ${SRC_FILE})
-endforeach()
-add_executable(${PROJECT_NAME} ${SOURCES})
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
+add_executable(
+    ${PROJECT_NAME} 
+    ${SRC}/main.cpp
+    ${SRC}/page.cpp
+    ${SRC}/file_loader.cpp
+    )
+
+find_package(SFML COMPONENTS graphics window system)
+
+set(SFML_STATIC_LIBRARIES TRUE)
 
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio sfml-window)
 
 file(COPY font DESTINATION ${PROJECT_BINARY_DIR})
 
-#foreach(LIB ${LIB_FILES})
-#    message("File:" ${LIB})
- #   target_link_libraries(${PROJECT_NAME} "${LIB}")
-#endforeach()
+install(TARGETS ${PROJECT_NAME})

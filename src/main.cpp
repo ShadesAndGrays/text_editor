@@ -1,9 +1,9 @@
 #include <iostream>
-#include "SFML/Graphics.hpp"
-#include "../include/page.hpp"
-#include "../include/file_loader.hpp"
 #include <vector>
+#include "SFML/Graphics.hpp"
 #include "SFML/Window/Keyboard.hpp"
+#include "page.hpp"
+#include "file_loader.hpp"
 // #include "SFML/System/Clock.hpp"
 
 int main()
