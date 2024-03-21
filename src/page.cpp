@@ -1,7 +1,7 @@
 // page.cpp
 
-#include "../include/page.hpp"
-#include "iostream"
+#include <iostream>
+#include "page.hpp"
 
 page::page()
 {
