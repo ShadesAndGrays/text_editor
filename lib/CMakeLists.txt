@@ -6,6 +6,8 @@ add_library(
     ui 
     UI/ui_manager.cpp
     UI/panel.cpp
+    UI/menubar.cpp
+    UI/button.cpp
     )
 
 target_include_directories(ui PUBLIC include/)

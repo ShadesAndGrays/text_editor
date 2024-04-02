@@ -1,16 +1,18 @@
 #pragma  once
+#include "panel.hpp"
 #include "ui_manager.hpp"
 
 namespace ui {
 
-    class Panel : public UiElement{
+    class MenuBar : public UiElement{
 
         private: 
-            sf::RectangleShape rect;
+            Panel area;
         public:
-            Panel();
+            MenuBar();
             void draw() override;
             bool actionPerformed() override;
+            
 
     };
 }
