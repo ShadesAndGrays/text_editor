@@ -20,8 +20,11 @@ find_package(SFML COMPONENTS graphics window system)
 
 set(SFML_STATIC_LIBRARIES TRUE)
 
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio sfml-window)
 
 file(COPY font DESTINATION ${PROJECT_BINARY_DIR})
 
 install(TARGETS ${PROJECT_NAME})
+
+add_subdirectory(lib)
+
+target_link_libraries(${PROJECT_NAME} ui sfml-graphics sfml-audio sfml-window)

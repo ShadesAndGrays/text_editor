@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Mouse.hpp>
+#include <ui.hpp>
 
 int main()
 {
@@ -12,6 +13,8 @@ int main()
     window.setPosition(sf::Vector2i(500.0, 50.0));
     page Page;
     
+    ui::UiManager myUi(&window);
+    myUi.addElement(std::make_shared<ui::Panel>());
 
     while (window.isOpen())
     {
@@ -28,6 +31,7 @@ int main()
 
         window.clear(sf::Color::White);
         Page.draw(window);
+        myUi.draw();
         window.display();
     }
 }
