@@ -13,6 +13,7 @@ add_executable(
     ${SRC}/main.cpp
     ${SRC}/page.cpp
     ${SRC}/file_loader.cpp
+    ${SRC}/keyboard_input_observer.cpp
     )
 
 find_package(SFML COMPONENTS graphics window system)
