@@ -27,7 +27,7 @@ page::page()
 
     Text.setFillColor(sf::Color::Black);
     Text.setPosition(sf::Vector2f(0.0, 0.0));
-    Font.loadFromFile("font/arial.ttf");
+    Font.loadFromFile("font/SpaceMono-Regular.ttf");
     Text.setFont(Font);
     Text.setString(inputText);
 
