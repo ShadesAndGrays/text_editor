@@ -8,6 +8,7 @@ ui::UiElement::UiElement(){
     this->visible = true;
     this->fgColor = sf::Color::White;
     this->bgColor = sf::Color::Black;
+    this->setSize(1,1);
 }
 
 bool ui::UiElement::mouseOn(){
@@ -31,7 +32,9 @@ void ui::UiElement::setWindow(sf::RenderWindow * window){this->window = window;}
 
 
 void ui::UiElement::setSize(float width , float height){
-    std::cout<< width <<" "<<  0.01 << " "<< this->window->getSize().x << " : " << this->sizeX<<std::endl;
+    if(window == nullptr)
+        return;
+    // std::cout<< width <<" "<<  0.01 << " "<< this->window->getSize().x << " : " << this->sizeX<<std::endl;
     if (width > 100)
         width = 100;
     else if (width < 0)
@@ -46,7 +49,7 @@ void ui::UiElement::setSize(float width , float height){
     this->region.width = width * 0.01 * this->window->getSize().x;
     this->region.height = height * 0.01 * this->window->getSize().y;
 
-    std::cout << "Size: " << this->sizeX << " " << this->sizeY << std::endl;
+    // std::cout << "Size: " << this->sizeX << " " << this->sizeY << std::endl;
 }
 
 

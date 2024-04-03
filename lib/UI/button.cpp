@@ -1,15 +1,35 @@
 #include "button.hpp"
 #include "panel.hpp"
 #include "ui_manager.hpp"
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include <memory>
 
 ui::Button::Button(){
     this->panel = std::make_unique<Panel>();
+    this->callback = [](){};
+    font.loadFromFile("./font/SpaceMono-Italic.tff");
+    txt = sf::Text("Hello",font,30);
+    txt.setFillColor(sf::Color::Red);
+}
+ui::Button::Button(std::function<void()> callback){
+    this->panel = std::make_unique<Panel>();
+    font.loadFromFile("./font/SpaceMono-Italic.ttf");
+    txt = sf::Text("Hello",font,30);
+    txt.setFillColor(sf::Color::Red);
+    this->callback = callback;
+}
+
+void ui::Button::setName(std::string name){
+    this->name = name;
+    txt.setString(name);
 }
 
 void ui::Button::draw(){
     this->panel->draw();
     this->panel->setVisible(isVisible());
+    window->draw(txt);
+
 }
 
 
@@ -17,6 +37,7 @@ void ui::Button::update(){
 
     if (this->actionPerformed()){
         panel->setBackground(fgColor);
+        this->callback();
     }
     else{
         if (this->mouseOn()){
@@ -25,6 +46,8 @@ void ui::Button::update(){
         else
         panel->setBackground(bgColor);
     }
+    txt.setPosition(x,y);
+
 }
 
 bool ui::Button::actionPerformed(){

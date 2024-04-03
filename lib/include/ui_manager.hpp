@@ -32,8 +32,8 @@ namespace ui {
             virtual void setPosition(float x, float y);
             virtual void update();
             void setVisible(bool visible);
-            void setBackground(sf::Color color);
-            void setForeground(sf::Color color);
+            virtual void setBackground(sf::Color color);
+            virtual void setForeground(sf::Color color);
             bool isVisible();
     };
 
